@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE ROCK SCHOOL OF MUSIC AND ARTS | Music Lessons & Student Hub</title>
+  <meta name="description" content="Explore custom music lessons for Piano, Guitar, Violin, and Vocals. Manage classes and track practice times in our student portal.">
+  <link rel="stylesheet" href="styles.css?v=1.1">
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Header Section -->
+  <header id="main-header">
+    <div class="nav-container">
+      <a href="#" class="logo" onclick="app.showView('landing')">
+        <div class="logo-icon">
+          <span>♩</span>
+        </div>
+        <span>THE ROCK SCHOOL OF MUSIC AND ARTS</span>
+      </a>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="#services" class="active">Lessons</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#contact">Location & Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-buttons" id="auth-nav-buttons">
+        <!-- Dynamic based on login state -->
+        <button class="btn btn-secondary" onclick="app.openAuthModal('login')">Sign In</button>
+        <button class="btn btn-primary" onclick="app.openAuthModal('signup')">Join Class</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- VIEW 1: LANDING PAGE -->
+  <div id="view-landing" class="app-view active">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="glow-orb" style="top: 10%; left: 5%;"></div>
+      <div class="glow-orb" style="bottom: 20%; right: 5%; --primary-glow: var(--secondary-glow);"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 class="musical-heading"><span class="gradient-text">Unlock Your</span><br><span class="accent-gradient-text">Musical Soul</span></h1>
+          <p>Whether you're a beginner learning your first key, or an advanced player refining complex scales, start your path to mastery here with premium, personalized instruction.</p>
+          <div class="hero-btns">
+            <button class="btn btn-primary" onclick="app.openAuthModal('signup')">Register as Student</button>
+            <a href="#schedule" class="btn btn-secondary">Class Schedule</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="music-circle">
+            <div class="music-circle-inner">
+              <div class="music-artwork">
+                <span>🎵</span>
+              </div>
+            </div>
+          </div>
+          <div class="floating-note fn-1">♩</div>
+          <div class="floating-note fn-2">♪</div>
+          <div class="floating-note fn-3">♫</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Lessons Section -->
+    <section id="services" class="container">
+      <div class="section-header">
+        <h2>Instruments We Teach</h2>
+        <p>Explore specialized individual lessons designed around your goals, schedule, and musical tastes.</p>
+      </div>
+      <div class="services-grid">
+        <div class="glass-card service-card">
+          <div class="service-icon">🎹</div>
+          <h3>Piano Academy</h3>
+          <p>Classical foundations, contemporary chords, and sight-reading built around your favorite pieces.</p>
+        </div>
+        <div class="glass-card service-card">
+          <div class="service-icon">🎸</div>
+          <h3>Acoustic & Electric Guitar</h3>
+          <p>Fingerpicking, solo chords, tab reading, and stage performance across rock, pop, and blues.</p>
+        </div>
+        <div class="glass-card service-card">
+          <div class="service-icon">🎻</div>
+          <h3>Classical Violin</h3>
+          <p>Intonation tuning, posture calibration, and orchestral masterpieces for students of all ages.</p>
+        </div>
+        <div class="glass-card service-card">
+          <div class="service-icon">🎸</div>
+          <h3>Ukulele</h3>
+          <p>Fingerpicking, solo chords, tab reading, and stage performance across rock, pop, and blues</p>
+        </div>
+	 <div class="glass-card service-card">
+          <div class="service-icon">🥁</div>
+          <h3>Drums</h3>
+          <p>Fingerpicking, solo chords, tab reading, and stage performance across rock, pop, and blues</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule / Timings Grid -->
+    <section id="schedule" class="container">
+      <div class="section-header">
+        <h2>Class Timings</h2>
+        <p>Find a flexible time slot that works with your daily schedule. We offer classes from Monday through Saturday.</p>
+      </div>
+      <div class="schedule-table-wrapper">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Instrument</th>
+              <th>Available Days</th>
+              <th>Morning Hours</th>
+              <th>Evening Hours</th>
+              <th>Session Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Piano</strong></td>
+              <td>mon to Sat</td>
+              <td>11:00 AM - 01:00 PM</td>
+              <td>05:00 PM - 09:00 PM</td>
+              <td><span class="schedule-tag tag-piano">1-on-1 Session</span></td>
+            </tr>
+            <tr>
+              <td><strong>Guitar</strong></td>
+               <td>mon to Sat</td>
+              <td>11:00 AM - 01:00 PM</td>
+              <td>05:00 PM - 09:00 PM</td>
+
+              <td><span class="schedule-tag tag-guitar">Group & Solo</span></td>
+            </tr>
+            <tr>
+              <td><strong>Violin</strong></td>
+               <td>mon to Sat</td>
+              <td>11:00 AM - 01:00 PM</td>
+              <td>05:00 PM - 09:00 PM</td>
+              <td><span class="schedule-tag tag-violin">1-on-1 Session</span></td>
+            </tr>
+	     <tr>
+              <td><strong>Ukulele</strong></td>
+               <td>mon to Sat</td>
+              <td>11:00 AM - 01:00 PM</td>
+              <td>05:00 PM - 09:00 PM</td>
+              <td><span class="schedule-tag tag-ukulele">1-on-1 Session</span></td>
+            </tr>
+		<tr>
+              <td><strong>Drums</strong></td>
+               <td>mon to Sat</td>
+              <td>11:00 AM - 01:00 PM</td>
+              <td>05:00 PM - 09:00 PM</td>
+              <td><span class="schedule-tag tag-drums">1-on-1 Session</span></td>
+            </tr>
+
+                     </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Map & Contact Grid -->
+    <section id="contact" class="container">
+      <div class="section-header">
+        <h2>Visit Us & Contact</h2>
+        <p>Get in touch or stop by our location to meet our teachers and tour our modern rehearsal booths.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-panel">
+          <div class="glass-card">
+            <div class="info-item" style="margin-bottom: 25px;">
+              <div class="info-icon">📍</div>
+              <div class="info-content">
+                <h4>Academy Location</h4>
+                <p><strong>THE ROCK SCHOOL OF MUSIC AND ARTS</strong><br>MIG - 857, beside GVMC PARK, Midhilapuri Vuda Colony, Pothinamallayya Palem, Visakhapatnam, Madhuravada, Andhra Pradesh 530041</p>
+                <a href="https://maps.google.com/maps?q=17.804473,83.362228%20%28THE%20ROCK%20SCHOOL%20OF%20MUSIC%20AND%20ARTS%29&amp;z=17" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 5px; color: var(--primary); font-weight: 600; text-decoration: none; font-size: 0.85rem; margin-top: 8px; transition: var(--transition-smooth);" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='var(--primary)'">
+                  Get Directions on Google Maps ↗
+                </a>
+              </div>
+            </div>
+            <div class="info-item" style="margin-bottom: 25px;">
+              <div class="info-icon">📞</div>
+              <div class="info-content">
+                <h4>Call & Support</h4>
+                <p>+91 99899 80049<br>Mon-Sat: 9 AM - 8 PM</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div class="info-content">
+                <h4>Email Inbox</h4>
+                <p>lessons@harmonicacademy.com<br>info@harmonicacademy.com</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location Map Widget -->
+          <a href="https://maps.google.com/maps?q=17.804473,83.362228%20%28THE%20ROCK%20SCHOOL%20OF%20MUSIC%20AND%20ARTS%29&amp;z=17" target="_blank" rel="noopener noreferrer" class="glass-card map-card" style="display: block; text-decoration: none; color: inherit;">
+            <div class="map-art"></div>
+            <div class="map-placeholder">
+              <div class="map-location-pin">
+                <span>🏫</span>
+              </div>
+              <span class="map-caption" style="margin-top: 15px; font-weight: 500; font-family: 'Playfair Display', serif;">Pin Location on Google Maps ↗</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="glass-card">
+          <h3 style="margin-bottom: 20px;">Send a Direct Message</h3>
+          <form id="contactForm" class="contact-form" onsubmit="app.handleContactSubmit(event)">
+            <div class="form-group">
+              <label for="c-name">Full Name</label>
+              <input type="text" id="c-name" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email Address</label>
+              <input type="email" id="c-email" class="form-control" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="c-instrument">Instrument of Interest</label>
+              <select id="c-instrument" class="form-control">
+                <option value="Piano">Piano</option>
+                <option value="Guitar">Guitar</option>
+                <option value="Violin">Violin</option>
+                <option value="Vocals">Voice & Vocal</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-message">Your Message</label>
+              <textarea id="c-message" class="form-control" placeholder="I'd like to check timings..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- VIEW 2: STUDENT PORTAL -->
+  <div id="view-student-portal" class="app-view">
+    <div class="container portal-layout">
+      <div class="portal-header">
+        <div class="portal-title-area">
+          <p>Welcome Back,</p>
+          <h2 id="student-display-name" class="accent-gradient-text">Student Name</h2>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-secondary" id="student-badge-btn">Student Hub</button>
+          <button class="btn btn-danger" onclick="app.logout()">Sign Out</button>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        <!-- Main Column -->
+        <div class="dashboard-main-col">
+          <div class="stats-cards-grid">
+            <div class="glass-card stat-widget">
+              <div class="stat-widget-icon">⏱️</div>
+              <div class="stat-widget-info">
+                <div class="num" id="stat-total-practice">0 hrs</div>
+                <div class="label">Total Practice</div>
+              </div>
+            </div>
+            <div class="glass-card stat-widget">
+              <div class="stat-widget-icon">🏅</div>
+              <div class="stat-widget-info">
+                <div class="num" id="stat-badges-unlocked">0/6</div>
+                <div class="label">Badges Earned</div>
+              </div>
+            </div>
+            <div class="glass-card stat-widget">
+              <div class="stat-widget-icon">🎵</div>
+              <div class="stat-widget-info">
+                <div class="num" id="student-assigned-instrument">-</div>
+                <div class="label">My Instrument</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Goal Box & Lesson details -->
+          <div class="glass-card">
+            <h3 style="display: flex; align-items: center; gap: 10px;">
+              <span>🎯</span> Active Lesson Plan
+            </h3>
+            <div class="goal-box">
+              <h4 id="student-lesson-target">No active target. Ask your instructor!</h4>
+              <p>Work on this daily and log your sessions using the practice timer on the right to track goals.</p>
+            </div>
+          </div>
+
+          <!-- Teacher reviews/feedback -->
+          <div class="glass-card">
+            <h3 style="margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+              <span>📝</span> Lesson Feedback Log
+            </h3>
+            <div class="feedback-timeline" id="student-feedback-timeline">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar (Stopwatch Practice Tracker & Badges) -->
+        <div class="dashboard-sidebar-col">
+          <!-- Stopwatch practice log -->
+          <div class="glass-card practice-timer-container">
+            <h3>⏱️ Practice Stopwatch</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Time your actual study logs directly from here</p>
+            <div class="timer-clock" id="timer-clock">00:00</div>
+            <div class="timer-controls">
+              <button class="btn btn-primary" id="btn-timer-start" onclick="app.toggleTimer()">Start Practice</button>
+              <button class="btn btn-secondary" id="btn-timer-reset" onclick="app.resetTimer()" disabled>Reset</button>
+            </div>
+          </div>
+
+          <!-- Unlocked Badges -->
+          <div class="glass-card">
+            <h3>🏅 Accomplishments</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Awarded by your instructor as you progress</p>
+            <div class="badges-showcase" id="student-badges-container">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW 3: TEACHER PORTAL -->
+  <div id="view-teacher-portal" class="app-view">
+    <div class="container portal-layout">
+      <div class="portal-header">
+        <div class="portal-title-area">
+          <p>Teacher Console</p>
+          <h2 class="accent-gradient-text" id="teacher-display-name">Instructor Panel</h2>
+        </div>
+        <div class="nav-buttons">
+          <button class="btn btn-danger" onclick="app.logout()">Sign Out</button>
+        </div>
+      </div>
+
+      <div class="teacher-grid">
+        <!-- Student Directory List -->
+        <div class="glass-card" style="display: flex; flex-direction: column;">
+          <h3 style="margin-bottom: 15px;">Student Directory</h3>
+          <div class="student-list-container" id="teacher-student-list">
+            <!-- Dynamically populated student list selectors -->
+          </div>
+        </div>
+
+        <!-- Selected Student Editor Pane -->
+        <div class="glass-card student-editor-pane" id="teacher-editor-pane">
+          <!-- Populated when a student is selected -->
+          <div style="text-align: center; padding: 40px 0; color: var(--text-muted);" id="no-student-selected">
+            <span style="font-size: 3rem;">👈</span>
+            <p style="margin-top: 15px;">Select a student from the directory to review their logs, award accomplishments, and post feedback.</p>
+          </div>
+
+          <div id="student-editor-active" style="display: none;">
+            <div class="editor-section-header">
+              <h3 id="editor-student-name">Student Name</h3>
+              <p id="editor-student-meta" style="color: var(--text-muted); font-size: 0.9rem;">Instrument | Total hours practiced</p>
+            </div>
+
+            <!-- Update Lesson Targets Form -->
+            <form onsubmit="app.updateStudentGoal(event)" style="margin-bottom: 25px;">
+              <h4 style="margin-bottom: 10px;">Update Target Lesson Goal</h4>
+              <div style="display: flex; gap: 15px;">
+                <input type="text" id="edit-goal-input" class="form-control" style="flex: 1;" placeholder="e.g., Learn G major scale" required>
+                <button type="submit" class="btn btn-primary">Update Goal</button>
+              </div>
+            </form>
+
+            <!-- Badge Updates Selector -->
+            <div style="margin-bottom: 25px;">
+              <h4 style="margin-bottom: 5px;">Award Accomplishments</h4>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Toggle accomplishments to award to this student</p>
+              <div class="badge-picker-grid" id="teacher-badge-picker">
+                <!-- Badges checkboxes rendered dynamic -->
+              </div>
+            </div>
+
+            <!-- Post New Comment/Review -->
+            <form onsubmit="app.addTeacherFeedback(event)">
+              <h4 style="margin-bottom: 10px;">Post Lesson Review & Comments</h4>
+              <div class="form-group" style="margin-bottom: 15px;">
+                <textarea id="edit-feedback-input" class="form-control" placeholder="Write a short lesson review or assignment feedback details..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-secondary">Submit Review</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTHENTICATION OVERLAY MODAL -->
+  <div class="modal-overlay" id="auth-modal">
+    <div class="glass-card modal-box">
+      <button class="modal-close-btn" onclick="app.closeAuthModal()">&times;</button>
+      
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-login" onclick="app.switchAuthTab('login')">Sign In</button>
+        <button class="auth-tab" id="tab-signup" onclick="app.switchAuthTab('signup')">Sign Up</button>
+      </div>
+
+      <!-- Log In Form -->
+      <form id="login-form" class="auth-form active" onsubmit="app.handleAuthSubmit(event, 'login')">
+        <div class="form-group">
+          <label for="l-email">Registered Email</label>
+          <input type="email" id="l-email" class="form-control" placeholder="student@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="l-password">Password</label>
+          <input type="password" id="l-password" class="form-control" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Sign In</button>
+        <p class="auth-switch-prompt">Don't have an account? <span onclick="app.switchAuthTab('signup')">Create Account</span></p>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form id="signup-form" class="auth-form" onsubmit="app.handleAuthSubmit(event, 'signup')">
+        <div class="form-group">
+          <label for="s-name">Your Full Name</label>
+          <input type="text" id="s-name" class="form-control" placeholder="Jane Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="s-email">Email Address</label>
+          <input type="email" id="s-email" class="form-control" placeholder="jane@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="s-password">Password</label>
+          <input type="password" id="s-password" class="form-control" placeholder="••••••••" required>
+        </div>
+        <div class="form-group">
+          <label for="s-instrument">Select Primary Instrument</label>
+          <select id="s-instrument" class="form-control">
+            <option value="Piano">Piano</option>
+            <option value="Guitar">Guitar</option>
+            <option value="Violin">Violin</option>
+            <option value="Vocals">Voice & Vocal</option>
+          </select>
+        </div>
+        <div class="form-row-checkbox">
+          <input type="checkbox" id="s-is-teacher">
+          <label for="s-is-teacher">Register as Instructor/Teacher</label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Create Account</button>
+        <p class="auth-switch-prompt">Already have an account? <span onclick="app.switchAuthTab('login')">Sign In</span></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding: 20px 0;">
+      <p>&copy; 2026 THE ROCK SCHOOL OF MUSIC AND ARTS. All rights reserved.</p>
+      <p style="color: var(--text-muted); font-size: 0.8rem;">Physical Studio Locations | Professional Musical Tutors</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
